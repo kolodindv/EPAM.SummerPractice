@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{93483BE9-22C3-4B97-B39E-39D43AE2801F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4EFF1B26-B547-4447-901B-881EA9E5A5B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{C76F7F03-F5AA-4C00-8967-1EC0286094CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PL", "PL", "{49DF1BDF-C588-4926-A09B-FF499E837F8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.SP.Kolodin.AchievementsPrj.BLL", "Epam.SP.Kolodin.AchievementsPrj.BLL\Epam.SP.Kolodin.AchievementsPrj.BLL.csproj", "{C4B7819F-5227-4C2D-9462-33A19516A867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.SP.Kolodin.AchievementsPrj.BLL.Interface", "Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface.csproj", "{36631F56-12C2-494D-A90E-C85297BCE1B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.SP.Kolodin.AchievementsPrj.Common", "Epam.SP.Kolodin.AchievementsPrj.Common\Epam.SP.Kolodin.AchievementsPrj.Common.csproj", "{304D210F-19F5-4457-9249-E69A29B26F4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL", "Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.csproj", "{667E1291-5441-4E3D-8CA1-57ECD7E88B6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.SP.Kolodin.AchievementsPrj.DAL.Interface", "Epam.SP.Kolodin.AchievementsPrj.DAL.Interface\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface.csproj", "{BA75CF72-5B76-431C-8596-1CE57EB5791F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.SP.Kolodin.AchievementsPrj.Entities", "Epam.SP.Kolodin.AchievementsPrj.Entities\Epam.SP.Kolodin.AchievementsPrj.Entities.csproj", "{C606D45E-D081-4DD5-A293-9FC56F95B899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.SP.Kolodin.AchievementsPrj.PL._Console", "Epam.SP.Kolodin.AchievementsPrj.PL._Console\Epam.SP.Kolodin.AchievementsPrj.PL._Console.csproj", "{87AA8DAE-50B9-4F3B-9B24-2EDBEB9AE546}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4B7819F-5227-4C2D-9462-33A19516A867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4B7819F-5227-4C2D-9462-33A19516A867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4B7819F-5227-4C2D-9462-33A19516A867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4B7819F-5227-4C2D-9462-33A19516A867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36631F56-12C2-494D-A90E-C85297BCE1B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36631F56-12C2-494D-A90E-C85297BCE1B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36631F56-12C2-494D-A90E-C85297BCE1B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36631F56-12C2-494D-A90E-C85297BCE1B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{304D210F-19F5-4457-9249-E69A29B26F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304D210F-19F5-4457-9249-E69A29B26F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304D210F-19F5-4457-9249-E69A29B26F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304D210F-19F5-4457-9249-E69A29B26F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{667E1291-5441-4E3D-8CA1-57ECD7E88B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667E1291-5441-4E3D-8CA1-57ECD7E88B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{667E1291-5441-4E3D-8CA1-57ECD7E88B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{667E1291-5441-4E3D-8CA1-57ECD7E88B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA75CF72-5B76-431C-8596-1CE57EB5791F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA75CF72-5B76-431C-8596-1CE57EB5791F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA75CF72-5B76-431C-8596-1CE57EB5791F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA75CF72-5B76-431C-8596-1CE57EB5791F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C606D45E-D081-4DD5-A293-9FC56F95B899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C606D45E-D081-4DD5-A293-9FC56F95B899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C606D45E-D081-4DD5-A293-9FC56F95B899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C606D45E-D081-4DD5-A293-9FC56F95B899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87AA8DAE-50B9-4F3B-9B24-2EDBEB9AE546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87AA8DAE-50B9-4F3B-9B24-2EDBEB9AE546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87AA8DAE-50B9-4F3B-9B24-2EDBEB9AE546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87AA8DAE-50B9-4F3B-9B24-2EDBEB9AE546}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4B7819F-5227-4C2D-9462-33A19516A867} = {93483BE9-22C3-4B97-B39E-39D43AE2801F}
+		{36631F56-12C2-494D-A90E-C85297BCE1B1} = {93483BE9-22C3-4B97-B39E-39D43AE2801F}
+		{304D210F-19F5-4457-9249-E69A29B26F4F} = {4EFF1B26-B547-4447-901B-881EA9E5A5B3}
+		{667E1291-5441-4E3D-8CA1-57ECD7E88B6E} = {C76F7F03-F5AA-4C00-8967-1EC0286094CE}
+		{BA75CF72-5B76-431C-8596-1CE57EB5791F} = {C76F7F03-F5AA-4C00-8967-1EC0286094CE}
+		{C606D45E-D081-4DD5-A293-9FC56F95B899} = {4EFF1B26-B547-4447-901B-881EA9E5A5B3}
+		{87AA8DAE-50B9-4F3B-9B24-2EDBEB9AE546} = {49DF1BDF-C588-4926-A09B-FF499E837F8A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A00FA32-50ED-4C44-8576-924BBB841032}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.dll
+C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.pdb
+C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.csproj.AssemblyReference.cache
+C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.dll
+C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.pdb
