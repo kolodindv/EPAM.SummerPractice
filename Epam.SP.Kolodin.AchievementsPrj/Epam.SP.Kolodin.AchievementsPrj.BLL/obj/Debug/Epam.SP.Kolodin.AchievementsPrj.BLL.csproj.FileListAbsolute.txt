@@ -4,3 +4,16 @@ C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.Ac
 C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.csproj.CoreCompileInputs.cache
 C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.dll
 C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.pdb
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.pdb
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface.pdb
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface.pdb
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.pdb
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.csproj.AssemblyReference.cache
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.csproj.CoreCompileInputs.cache
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.csproj.CopyComplete
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.pdb

@@ -23,12 +23,13 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
         {
             using (_connection /*= GetNewSqlConnection()*/)
             {
-                
+
             }
+        }
 
         public void EditUserProfile(Guid id)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public UserProfile ReadUserProfile(Guid id)

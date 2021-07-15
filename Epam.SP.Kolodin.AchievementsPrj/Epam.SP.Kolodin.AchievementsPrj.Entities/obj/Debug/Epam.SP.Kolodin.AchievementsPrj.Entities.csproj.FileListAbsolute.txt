@@ -3,3 +3,9 @@ C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.Ac
 C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.csproj.CoreCompileInputs.cache
 C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.dll
 C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.pdb
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.pdb
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.csproj.AssemblyReference.cache
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.csproj.CoreCompileInputs.cache
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.pdb

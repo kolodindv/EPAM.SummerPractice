@@ -8,9 +8,10 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
 {
     class Program
     {
-        //static void Main(string[] args)
-        //{
-        //    Console.WriteLine("Hello *** world!");
-        //}
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello *** world!");
+            Console.ReadKey();
+        }
     }
 }
