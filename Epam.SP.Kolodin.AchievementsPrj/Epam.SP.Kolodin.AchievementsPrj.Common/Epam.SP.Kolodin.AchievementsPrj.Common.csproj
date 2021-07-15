@@ -41,7 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface.csproj">
+      <Project>{36631f56-12c2-494d-a90e-c85297bce1b1}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.BLL.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.BLL\Epam.SP.Kolodin.AchievementsPrj.BLL.csproj">
+      <Project>{c4b7819f-5227-4c2d-9462-33a19516a867}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface.csproj">
+      <Project>{ba75cf72-5b76-431c-8596-1ce57eb5791f}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.DAL.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.csproj">
+      <Project>{667e1291-5441-4e3d-8ca1-57ecd7e88b6e}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

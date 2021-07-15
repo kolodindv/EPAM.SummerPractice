@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,7 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MsSqlAchievementDAO.cs" />
+    <Compile Include="MsSqlUserProfileDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface.csproj">
+      <Project>{ba75cf72-5b76-431c-8596-1ce57eb5791f}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.DAL.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.Entities\Epam.SP.Kolodin.AchievementsPrj.Entities.csproj">
+      <Project>{c606d45e-d081-4dd5-a293-9fc56f95b899}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

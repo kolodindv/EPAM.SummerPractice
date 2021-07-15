@@ -8,16 +8,16 @@ namespace Epam.SP.Kolodin.AchievementsPrj.Entities
 {
     public class Achievement
     {
-        public Achievement(Guid user_Id, string heading, string locationOfReceipt, int degree, int yearOfReceipt)
+        public Achievement(Guid userId, string heading, string locationOfReceipt, int degree, int yearOfReceipt)
         {
-            User_Id = user_Id;
+            UserId = userId;
             Heading = heading;
             LocationOfReceipt = locationOfReceipt;
             Degree = degree;
             YearOfReceipt = yearOfReceipt;
         }
 
-        public Guid User_Id { get; }
+        public Guid UserId { get; }
 
         public string Heading { get; private set; }
 

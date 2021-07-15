@@ -41,7 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAchievementDAO.cs" />
+    <Compile Include="IUserProfileDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.Entities\Epam.SP.Kolodin.AchievementsPrj.Entities.csproj">
+      <Project>{c606d45e-d081-4dd5-a293-9fc56f95b899}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

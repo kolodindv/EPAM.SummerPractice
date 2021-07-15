@@ -41,7 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AchievementLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserProfileLogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface.csproj">
+      <Project>{36631f56-12c2-494d-a90e-c85297bce1b1}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.BLL.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface.csproj">
+      <Project>{ba75cf72-5b76-431c-8596-1ce57eb5791f}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.DAL.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
