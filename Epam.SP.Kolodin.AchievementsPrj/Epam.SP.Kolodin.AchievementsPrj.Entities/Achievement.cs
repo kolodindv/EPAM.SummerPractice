@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,5 +27,7 @@ namespace Epam.SP.Kolodin.AchievementsPrj.Entities
         public int Degree { get; private set; }
 
         public int YearOfReceipt { get; private set; }
+
+        public override string ToString() => JsonConvert.SerializeObject(this);        
     }
 }

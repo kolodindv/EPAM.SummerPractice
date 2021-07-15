@@ -4,3 +4,16 @@ C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.Ac
 C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.csproj.CoreCompileInputs.cache
 C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.dll
 C:\Users\Denis K\source\repos\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.pdb
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.csproj.AssemblyReference.cache
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.csproj.CoreCompileInputs.cache
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.dll
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.pdb
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.dll
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.pdb
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface.dll
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.dll
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\bin\Debug\Newtonsoft.Json.dll
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.DAL.Interface.pdb
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.pdb
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\bin\Debug\Newtonsoft.Json.xml
+S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL.csproj.CopyComplete

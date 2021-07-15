@@ -10,8 +10,8 @@ namespace Epam.SP.Kolodin.AchievementsPrj.DAL.Interface
     public interface IUserProfileDAO
     {
         void AddUserProfile(UserProfile userProfile);
-        UserProfile ReadUserProfile(Guid id);
-        void EditUserProfile(Guid id);
+        UserProfile GetUserProfile(Guid id);
+        UserProfile EditUserProfile(Guid id);
         void RemoveUserProfile(Guid id);
     }
 }

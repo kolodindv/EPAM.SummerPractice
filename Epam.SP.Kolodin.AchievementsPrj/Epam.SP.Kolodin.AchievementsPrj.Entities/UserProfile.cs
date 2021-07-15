@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +9,18 @@ namespace Epam.SP.Kolodin.AchievementsPrj.Entities
 {
     public class UserProfile
     {
-        public UserProfile(string fullName, int age)
+        public UserProfile(Guid id, string fullName, DateTime birthDate)
         {
-            Id = Guid.NewGuid();
+            Id = id;
             FullName = fullName;
-            Age = age;
+            BirthDate = birthDate;
         }
-
+        public UserProfile(string fullName, DateTime birthDate) : this(Guid.NewGuid(), fullName, birthDate) { }        
+       
         public Guid Id { get; }
         public string FullName { get; private set; }
-        public int Age { get; private set; }
+        public DateTime BirthDate { get; private set; }
+
+        public override string ToString() => JsonConvert.SerializeObject(this);
     }
 }

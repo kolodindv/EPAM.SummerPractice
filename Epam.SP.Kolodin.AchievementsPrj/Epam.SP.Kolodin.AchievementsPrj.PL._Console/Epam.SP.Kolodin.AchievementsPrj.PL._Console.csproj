@@ -49,5 +49,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface.csproj">
+      <Project>{36631f56-12c2-494d-a90e-c85297bce1b1}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.BLL.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.Common\Epam.SP.Kolodin.AchievementsPrj.Common.csproj">
+      <Project>{304d210f-19f5-4457-9249-e69a29b26f4f}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.SP.Kolodin.AchievementsPrj.Entities\Epam.SP.Kolodin.AchievementsPrj.Entities.csproj">
+      <Project>{c606d45e-d081-4dd5-a293-9fc56f95b899}</Project>
+      <Name>Epam.SP.Kolodin.AchievementsPrj.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

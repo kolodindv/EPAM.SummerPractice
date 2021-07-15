@@ -10,8 +10,8 @@ namespace Epam.SP.Kolodin.AchievementsPrj.DAL.Interface
     public interface IAchievementDAO
     {
         void AddAchievement(Achievement achievement);
-        Achievement ReadAchievement(Guid userId);
-        void EditAchievement(Guid userId);
+        Achievement GetAchievement(Guid userId);
+        Achievement EditAchievement(Guid userId);
         void RemoveAchievement(Guid userId);
     }
 }
