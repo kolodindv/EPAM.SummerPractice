@@ -15,25 +15,25 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
             Console.WriteLine("Для подтверждения действия введите символ: \"Y\" или \"Д\"\n" +
                 "Для отмены введите любой другой символ");
             char confirmChar = Console.ReadKey().KeyChar;
+
             switch (confirmChar)
             {
                 case 'Y': case 'Д':
                     {
-                        Console.WriteLine("Подтвержено\n");
+                        Console.WriteLine("\nПодтвержено\n");
                         return true;
                     }
                 default:
                     {
-                        Console.WriteLine("Отклонено\n");
+                        Console.WriteLine("\nОтклонено\n");
                         return false;
                     }
             }
             
         }
-        public static void AddUserProfile()
+        public static void RegistrationUserProfile(string login)
         {
-
-            //как аналогичное: Console.ReadLine("Полное имя: "); 
+            //как аналогичное????: Console.ReadLine("Полное имя: "); 
             //Добавление нового пользователя:
             //Полное имя: %вводимое имя%
             //Дата рождения (чч.мм.гггг): %вводимая дата%
@@ -47,7 +47,8 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
 
             if(ConsoleСonfirmAction())
             {
-                DependencyResolver.Instance.UserProfileLogic.AddUserProfile(toAdd);
+                //DependencyResolver.Instance.UserProfileLogic.Registration(toAdd, login, "fffrhrtyszx24231");
+                DependencyResolver.Instance.UserProfileLogic.Registration(toAdd, login, "ajkaklsdj");
                 Console.WriteLine("Добавление нового пользователя успешно завершилось");
             }
             else
@@ -59,7 +60,9 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
         }
         static void Main(string[] args)
         {
-            AddUserProfile();
+            //RegistrationUserProfile("one");
+            //RegistrationUserProfile("two");
+            RegistrationUserProfile("322");
             ////Console.WriteLine("Hello *** world!");
 
             //var upIn = new UserProfile("гроооомашик", DateTime.Parse("30.05.2000"));

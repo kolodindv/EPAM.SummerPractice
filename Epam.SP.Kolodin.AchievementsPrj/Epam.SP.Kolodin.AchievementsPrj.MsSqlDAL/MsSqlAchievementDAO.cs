@@ -141,5 +141,6 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 command.ExecuteNonQuery();
             }
         }
+
     }
 }

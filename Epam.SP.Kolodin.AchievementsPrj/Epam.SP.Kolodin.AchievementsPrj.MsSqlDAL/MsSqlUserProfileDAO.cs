@@ -25,9 +25,9 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
 
         private SqlConnection _connection;
 
-        public void AddUserProfile(UserProfile userProfile) => AddUserProfile(userProfile.Id, userProfile.FullName, userProfile.BirthDate);
+        private void AddUserProfile(UserProfile userProfile, string login, byte[] password) => AddUserProfile(userProfile.Id, userProfile.FullName, userProfile.BirthDate, login, password);
 
-        private void AddUserProfile(Guid id, string fullName, DateTime birthDate)
+        private void AddUserProfile(Guid id, string fullName, DateTime birthDate, string login, byte[] password)
         {
             using (_connection = GetNewSqlConnection())
             {
@@ -36,6 +36,8 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 command.CommandType = CommandType.StoredProcedure;
 
                 _connection.Open();
+                command.Parameters.AddWithValue("@login", login);
+                command.Parameters.AddWithValue("@password", password);
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@fullName", fullName);
                 command.Parameters.AddWithValue("@birthDate", birthDate);
@@ -84,8 +86,6 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
             return new UserProfile(id, fullName, birthDate);
         }
 
-       
-
         public void RemoveUserProfile(Guid id)
         {
             using (_connection = GetNewSqlConnection())
@@ -99,5 +99,13 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 command.ExecuteNonQuery();
             }
         }
-    }
+
+        public UserProfile Registration(UserProfile userProfile, string login, byte[] password)
+        { 
+            AddUserProfile(userProfile, login, password);
+            return GetUserProfile(userProfile.Id);
+        }           
+        
+    }      
+      
 }

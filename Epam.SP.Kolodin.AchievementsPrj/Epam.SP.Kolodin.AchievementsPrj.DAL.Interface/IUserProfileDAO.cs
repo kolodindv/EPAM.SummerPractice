@@ -9,7 +9,8 @@ namespace Epam.SP.Kolodin.AchievementsPrj.DAL.Interface
 {
     public interface IUserProfileDAO
     {
-        void AddUserProfile(UserProfile userProfile);
+        UserProfile Registration(UserProfile userProfile, string login, byte[] password);
+        //void AddUserProfile(UserProfile userProfile);
         UserProfile GetUserProfile(Guid id);
         UserProfile EditUserProfile(Guid id, string fullName, DateTime birthDate);
         void RemoveUserProfile(Guid id);
