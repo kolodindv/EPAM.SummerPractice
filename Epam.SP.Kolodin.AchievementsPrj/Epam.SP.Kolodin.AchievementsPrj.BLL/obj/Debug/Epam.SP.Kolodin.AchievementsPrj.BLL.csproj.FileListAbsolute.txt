@@ -32,3 +32,5 @@ S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.Achiev
 S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.pdb
 S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Newtonsoft.Json.xml
 S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.csproj.CopyComplete
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Newtonsoft.Json.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL\bin\Debug\Newtonsoft.Json.xml

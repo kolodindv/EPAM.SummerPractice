@@ -20,12 +20,14 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
         // если подключаюсь к бд на рабочем компьютере
         //private string _connectionString = ConfigurationManager.ConnectionStrings["AchievementsPrjDBWorkPlace"].ConnectionString;
         private SqlConnection GetNewSqlConnection() => new SqlConnection(
-            ConfigurationManager.ConnectionStrings["AchievementsPrjDBWorkPlace"].ConnectionString);
+            //ConfigurationManager.ConnectionStrings["AchievementsPrjDBWorkPlace"].ConnectionString);
+            ConfigurationManager.ConnectionStrings["AchievementsPrjDBHome"].ConnectionString);
 
         private SqlConnection _connection;
+
         public void AddUserProfile(UserProfile userProfile) => AddUserProfile(userProfile.Id, userProfile.FullName, userProfile.BirthDate);
 
-        public void AddUserProfile(Guid id, string fullName, DateTime birthDate)
+        private void AddUserProfile(Guid id, string fullName, DateTime birthDate)
         {
             using (_connection = GetNewSqlConnection())
             {
@@ -39,11 +41,6 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 command.Parameters.AddWithValue("@birthDate", birthDate);
                 command.ExecuteNonQuery();
             }
-        }
-
-        public UserProfile EditUserProfile(Guid id)
-        {    
-            throw new NotImplementedException();
         }
 
         public UserProfile GetUserProfile(Guid id)
@@ -60,16 +57,34 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    //return new UserProfile(
-                    //    id: id,
-                    //    fullName: reader["full_name"] as string,
-                    //    age: (int)reader["age"]);
-                    return new UserProfile(id, reader["full_name"] as string, (DateTime)reader["birth_date"]);
+                    return new UserProfile(
+                        id: id,
+                        fullName: reader["full_name"] as string,
+                        birthDate: (DateTime)reader["birth_date"]);
                 }
 
                 throw new InvalidOperationException("Cannot find UserProfile with GUID: " + id);
             }
         }
+
+        public UserProfile EditUserProfile(Guid id, string fullName, DateTime birthDate)
+        {
+            using (_connection = GetNewSqlConnection())
+            {
+                string sqlProcedureName = "EditUserProfile";
+                SqlCommand command = new SqlCommand(sqlProcedureName, _connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                _connection.Open();
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@fullName", fullName);
+                command.Parameters.AddWithValue("@birthDate", birthDate);
+                command.ExecuteNonQuery();
+            }
+            return new UserProfile(id, fullName, birthDate);
+        }
+
+       
 
         public void RemoveUserProfile(Guid id)
         {

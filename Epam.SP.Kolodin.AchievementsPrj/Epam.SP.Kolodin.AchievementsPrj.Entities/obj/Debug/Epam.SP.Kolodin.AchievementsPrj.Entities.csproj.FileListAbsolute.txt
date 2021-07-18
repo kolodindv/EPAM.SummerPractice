@@ -18,3 +18,6 @@ S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.Achiev
 S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.csproj.CopyComplete
 S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.dll
 S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.pdb
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\bin\Debug\Newtonsoft.Json.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\bin\Debug\Newtonsoft.Json.xml
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.Entities\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.csproj.CopyComplete

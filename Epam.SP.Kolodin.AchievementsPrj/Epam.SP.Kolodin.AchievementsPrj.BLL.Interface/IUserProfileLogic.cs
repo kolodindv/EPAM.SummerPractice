@@ -11,7 +11,7 @@ namespace Epam.SP.Kolodin.AchievementsPrj.BLL.Interface
     {
         void AddUserProfile(UserProfile userProfile);
         UserProfile GetUserProfile(Guid id);
-        UserProfile EditUserProfile(Guid id);
+        UserProfile EditUserProfile(Guid id, string fullName, DateTime birthDate);
         void RemoveUserProfile(Guid id);
     }
 }

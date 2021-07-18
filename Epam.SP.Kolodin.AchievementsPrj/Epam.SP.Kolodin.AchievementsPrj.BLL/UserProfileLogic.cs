@@ -20,7 +20,8 @@ namespace Epam.SP.Kolodin.AchievementsPrj.BLL
 
         public void AddUserProfile(UserProfile userProfile) => _userProfileDAO.AddUserProfile(userProfile);
         public UserProfile GetUserProfile(Guid id) => _userProfileDAO.GetUserProfile(id);
-        public UserProfile EditUserProfile(Guid id) => _userProfileDAO.EditUserProfile(id);
+        public UserProfile EditUserProfile(Guid id, string fullName, DateTime birthDate) => _userProfileDAO.EditUserProfile(id, fullName, birthDate);
+        //=> _userProfileDAO.EditUserProfile(id, fullName, birthDate);
         public void RemoveUserProfile(Guid id) => _userProfileDAO.RemoveUserProfile(id);
     }
 }

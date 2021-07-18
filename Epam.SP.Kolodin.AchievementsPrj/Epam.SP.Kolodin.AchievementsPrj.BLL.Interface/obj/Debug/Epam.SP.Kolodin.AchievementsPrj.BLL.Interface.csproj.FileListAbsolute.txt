@@ -21,3 +21,8 @@ S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.Achiev
 S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface.csproj.CopyComplete
 S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface.dll
 S:\GitClone\Epam Practice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface.pdb
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\bin\Debug\Newtonsoft.Json.dll
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\bin\Debug\Epam.SP.Kolodin.AchievementsPrj.Entities.pdb
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\bin\Debug\Newtonsoft.Json.xml
+D:\GitClone\EPAM.SummerPractice\Epam.SP.Kolodin.AchievementsPrj\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface\obj\Debug\Epam.SP.Kolodin.AchievementsPrj.BLL.Interface.csproj.CopyComplete

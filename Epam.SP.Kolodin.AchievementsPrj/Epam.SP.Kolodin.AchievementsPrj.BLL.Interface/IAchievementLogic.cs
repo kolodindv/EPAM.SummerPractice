@@ -11,7 +11,7 @@ namespace Epam.SP.Kolodin.AchievementsPrj.BLL.Interface
     {
         void AddAchievement(Achievement achievement);
         Achievement GetAchievement(Guid userId);
-        Achievement EditAchievement(Guid userId);
+        Achievement EditAchievement(Guid id, string heading, string locationOfReceipt, int degree, int yearOfReceipt);
         void RemoveAchievement(Guid userId);
     }
 }
