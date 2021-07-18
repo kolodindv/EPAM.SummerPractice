@@ -10,6 +10,7 @@ namespace Epam.SP.Kolodin.AchievementsPrj.BLL.Interface
     {
         UserProfile Registration(UserProfile userProfile, string login, string password);
         //void AddUserProfile(UserProfile userProfile);
+        UserProfile Authorization(string login, string password);
         UserProfile GetUserProfile(Guid id);
         UserProfile EditUserProfile(Guid id, string fullName, DateTime birthDate);
         void RemoveUserProfile(Guid id);

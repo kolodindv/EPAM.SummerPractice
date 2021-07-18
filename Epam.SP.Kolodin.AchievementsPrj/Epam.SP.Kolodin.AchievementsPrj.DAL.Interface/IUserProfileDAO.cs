@@ -12,6 +12,7 @@ namespace Epam.SP.Kolodin.AchievementsPrj.DAL.Interface
         UserProfile Registration(UserProfile userProfile, string login, byte[] password);
         //void AddUserProfile(UserProfile userProfile);
         UserProfile GetUserProfile(Guid id);
+        UserProfile GetUserProfile(string login, byte[] password);
         UserProfile EditUserProfile(Guid id, string fullName, DateTime birthDate);
         void RemoveUserProfile(Guid id);
     }

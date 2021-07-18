@@ -19,18 +19,28 @@ namespace Epam.SP.Kolodin.AchievementsPrj.BLL
             _userProfileDAO = userProfileDAO;
         }
 
+        private byte[] StringPassToHashPass(string password)
+        {
+            using (SHA512 shaM = new SHA512Managed())
+            {
+                byte[] pass_bytes = Encoding.ASCII.GetBytes(password);
+                byte[] hash_pass = shaM.ComputeHash(pass_bytes);
+                return hash_pass;
+            }
+        }
+
         public UserProfile Registration(UserProfile userProfile, string login, string password)
         {
            if (userProfile == null)
            {
                     throw new ArgumentNullException();
            }
-            using (SHA512 shaM = new SHA512Managed())
-            {
-                byte[] pass_bytes = Encoding.ASCII.GetBytes(password);
-                byte[] hash_pass = shaM.ComputeHash(pass_bytes); 
-                return _userProfileDAO.Registration(userProfile, login, hash_pass);
-            }
+           return _userProfileDAO.Registration(userProfile, login, StringPassToHashPass(password));
+        }
+
+        public UserProfile Authorization(string login, string password)
+        {
+            return _userProfileDAO.GetUserProfile(login, StringPassToHashPass(password));
         }
 
         //public void AddUserProfile(UserProfile userProfile) => _userProfileDAO.AddUserProfile(userProfile);

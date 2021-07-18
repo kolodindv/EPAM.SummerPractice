@@ -68,6 +68,37 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 throw new InvalidOperationException("Cannot find UserProfile with GUID: " + id);
             }
         }
+        public UserProfile GetUserProfile(string login, byte[] password)
+        {
+            using (_connection = GetNewSqlConnection())
+            {
+                string sqlProcedureName = "GetUserProfileByLogin";
+                SqlCommand command = new SqlCommand(sqlProcedureName, _connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                _connection.Open();
+                command.Parameters.AddWithValue("@login", login);
+
+                //Console.WriteLine(login);
+                //foreach(var a in password)
+                //{
+                //    Console.WriteLine(a.ToString());
+                //}
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    if (password != (byte[])reader["user_pass"])
+                    {
+                        throw new InvalidConstraintException("Password is incorrect.");
+                    }
+
+                    return GetUserProfile((Guid)reader["user_id_pk"]);
+                }
+
+                throw new InvalidOperationException("Cannot find UserProfile with login: " + login);
+            }
+        }
 
         public UserProfile EditUserProfile(Guid id, string fullName, DateTime birthDate)
         {
