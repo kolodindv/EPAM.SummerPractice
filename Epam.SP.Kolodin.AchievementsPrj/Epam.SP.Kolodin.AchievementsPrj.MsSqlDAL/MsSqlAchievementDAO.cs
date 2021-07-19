@@ -26,11 +26,11 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
         public void AddAchievement(Achievement achievement) => AddAchievement(achievement.Id, achievement.UserId,
             achievement.Heading, achievement.LocationOfReceipt, achievement.Degree, achievement.YearOfReceipt);
 
-        private void AddAchievement(Guid id, Guid userId, string heading, string locationOfReceipt, int degree, int yearOfReceipt)
+        private void AddAchievement(Guid id, Guid userId, string heading, string locationOfReceipt, int? degree, int? yearOfReceipt)
         {
             using (_connection = GetNewSqlConnection())
             {
-                string sqlProcedureName = "AddUserProfile";
+                string sqlProcedureName = "AddAchievement";
                 SqlCommand command = new SqlCommand(sqlProcedureName, _connection);
                 command.CommandType = CommandType.StoredProcedure;
 
@@ -38,14 +38,38 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@userId", userId);
                 command.Parameters.AddWithValue("@heading", heading);
-                command.Parameters.AddWithValue("@locationOfReceipt", locationOfReceipt);
-                command.Parameters.AddWithValue("@degree", degree);
-                command.Parameters.AddWithValue("@yearOfReceipt", yearOfReceipt);
+
+                if(locationOfReceipt == null)
+                {
+                    command.Parameters.AddWithValue("@locationOfReceipt", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@locationOfReceipt", locationOfReceipt);
+                }
+
+                if (degree == null)
+                {
+                    command.Parameters.AddWithValue("@degree", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@degree", degree);
+                }
+
+                if (yearOfReceipt == null)
+                {
+                    command.Parameters.AddWithValue("@yearOfReceipt", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@yearOfReceipt", yearOfReceipt);
+                }
                 command.ExecuteNonQuery();
             }
         }
 
-        public Achievement EditAchievement(Guid id, string heading, string locationOfReceipt, int degree, int yearOfReceipt)
+        public Achievement EditAchievement(Guid id, string heading, string locationOfReceipt, int? degree, int? yearOfReceipt)
         {
             using (_connection = GetNewSqlConnection())
             {
@@ -56,9 +80,33 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 _connection.Open();
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@heading", heading);
-                command.Parameters.AddWithValue("@locationOfReceipt", locationOfReceipt);
-                command.Parameters.AddWithValue("@degree", degree);
-                command.Parameters.AddWithValue("@yearOfReceipt", yearOfReceipt);
+
+                if (locationOfReceipt == null)
+                {
+                    command.Parameters.AddWithValue("@locationOfReceipt", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@locationOfReceipt", locationOfReceipt);
+                }
+
+                if (degree == null)
+                {
+                    command.Parameters.AddWithValue("@degree", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@degree", degree);
+                }
+
+                if (yearOfReceipt == null)
+                {
+                    command.Parameters.AddWithValue("@yearOfReceipt", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@yearOfReceipt", yearOfReceipt);
+                }
                 command.ExecuteNonQuery();
             }
             return new Achievement(id, heading, locationOfReceipt, degree, yearOfReceipt);
@@ -78,13 +126,32 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
+                    int? degree;
+                    if (reader["degree"] == DBNull.Value)
+                    {
+                        degree = null;
+                    }
+                    else
+                    {
+                        degree = (int)reader["degree"];
+                    }
+                    short? yearOfReceipt;
+                    if (reader["year_of_receipt"] == DBNull.Value)
+                    {
+                        yearOfReceipt = null;
+                    }
+                    else
+                    {
+                        yearOfReceipt = (short)reader["year_of_receipt"];
+                    }
+                    
                     return new Achievement(
                         id: id,
                         userId: (Guid)reader["user_id_pk_fk"],
                         heading: reader["heading"] as string,
                         locationOfReceipt: reader["location_of_receipt"] as string, 
-                        degree: (int)reader["degree"], 
-                        yearOfReceipt: (int)reader["year_of_receipt"]);
+                        degree: degree, 
+                        yearOfReceipt: yearOfReceipt);
                     }
 
                 throw new InvalidOperationException("Cannot find Achievement with GUID: " + id);
@@ -100,31 +167,53 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 command.CommandType = CommandType.StoredProcedure;
 
                 _connection.Open();
-                command.Parameters.AddWithValue("@id", userId);
-
-                SqlDataReader reader = command.ExecuteReader();
+                command.Parameters.AddWithValue("@userId", userId);
 
                 List<Achievement> userAchievements = new List<Achievement>();
-
-                if(reader.HasRows)
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        userAchievements.Add(new Achievement(
+                        int? degree;
+                        int degree2;
+                        if (reader["degree"] == DBNull.Value)
+                        {
+                            degree = null;
+                        }
+                        else
+                        {
+                            degree2 = (int)reader["degree"];
+                            degree = degree2;
+                        }
+                        short? yearOfReceipt;
+                        short yearOfReceipt2;
+                        if (reader["year_of_receipt"] == DBNull.Value)
+                        {
+                            yearOfReceipt = null;
+                        }
+                        else
+                        {
+                            yearOfReceipt2 = (short)reader["year_of_receipt"];
+                            yearOfReceipt = yearOfReceipt2;
+                        }
+                        Achievement temp = new Achievement(
                             id: (Guid)reader["id_pk"],
                             userId: userId,
                             heading: reader["heading"] as string,
                             locationOfReceipt: reader["location_of_receipt"] as string,
-                            degree: (int)reader["degree"],
-                            yearOfReceipt: (int)reader["year_of_receipt"]));
+                            degree: degree,
+                            yearOfReceipt: yearOfReceipt);
 
+                        userAchievements.Add(temp);
                     }
                     return userAchievements;
-                }                
+                }
                 else
                 {
                     throw new InvalidOperationException("Cannot find UserProfile with GUID: " + userId);
-                } 
+                }
+
             }
         }
 

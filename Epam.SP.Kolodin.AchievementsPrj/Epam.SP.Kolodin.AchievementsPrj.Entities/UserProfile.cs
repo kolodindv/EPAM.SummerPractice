@@ -18,8 +18,8 @@ namespace Epam.SP.Kolodin.AchievementsPrj.Entities
         public UserProfile(string fullName, DateTime birthDate) : this(Guid.NewGuid(), fullName, birthDate) { }
 
         public Guid Id { get; }
-        public string FullName { get; private set; }
-        public DateTime BirthDate { get; private set; }
+        public string FullName { get; set; }
+        public DateTime BirthDate { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this);
     }

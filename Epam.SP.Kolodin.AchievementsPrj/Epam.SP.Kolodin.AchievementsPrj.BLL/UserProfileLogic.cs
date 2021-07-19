@@ -24,18 +24,18 @@ namespace Epam.SP.Kolodin.AchievementsPrj.BLL
             using (SHA512 shaM = new SHA512Managed())
             {
                 byte[] pass_bytes = Encoding.ASCII.GetBytes(password);
-                byte[] hash_pass = shaM.ComputeHash(pass_bytes);
+                byte[] hash_pass = shaM.ComputeHash(pass_bytes);                
                 return hash_pass;
             }
         }
 
         public UserProfile Registration(UserProfile userProfile, string login, string password)
         {
-           if (userProfile == null)
-           {
-                    throw new ArgumentNullException();
-           }
-           return _userProfileDAO.Registration(userProfile, login, StringPassToHashPass(password));
+            if (userProfile == null)
+            {
+                throw new ArgumentNullException();
+            }
+            return _userProfileDAO.Registration(userProfile, login, StringPassToHashPass(password));
         }
 
         public UserProfile Authorization(string login, string password)
@@ -43,7 +43,6 @@ namespace Epam.SP.Kolodin.AchievementsPrj.BLL
             return _userProfileDAO.GetUserProfile(login, StringPassToHashPass(password));
         }
 
-        //public void AddUserProfile(UserProfile userProfile) => _userProfileDAO.AddUserProfile(userProfile);
         public UserProfile GetUserProfile(Guid id) => _userProfileDAO.GetUserProfile(id);
         public UserProfile EditUserProfile(Guid id, string fullName, DateTime birthDate) => _userProfileDAO.EditUserProfile(id, fullName, birthDate);
         //=> _userProfileDAO.EditUserProfile(id, fullName, birthDate);

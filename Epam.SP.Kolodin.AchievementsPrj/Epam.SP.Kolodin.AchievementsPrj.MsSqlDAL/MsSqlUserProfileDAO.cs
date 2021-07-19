@@ -36,7 +36,7 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 command.CommandType = CommandType.StoredProcedure;
 
                 _connection.Open();
-                command.Parameters.AddWithValue("@login", login);
+                command.Parameters.AddWithValue("@login", login);                
                 command.Parameters.AddWithValue("@password", password);
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@fullName", fullName);
@@ -79,23 +79,28 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 _connection.Open();
                 command.Parameters.AddWithValue("@login", login);
 
-                //Console.WriteLine(login);
-                //foreach(var a in password)
-                //{
-                //    Console.WriteLine(a.ToString());
-                //}
-
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    if (password != (byte[])reader["user_pass"])
+                    byte[] user_pass = (byte[])reader["user_pass"];
+
+                    if (password.Length != user_pass.Length)
                     {
-                        throw new InvalidConstraintException("Password is incorrect.");
+                        throw new InvalidConstraintException("Password is incorrect. (wrong size)");
+                    }
+
+                    for (int i = 0; i < user_pass.Length; i++)
+                    {
+                        if (password[i] != user_pass[i])
+                        {
+                            throw new InvalidConstraintException("Password is incorrect.");
+                        }
                     }
 
                     return GetUserProfile((Guid)reader["user_id_pk"]);
                 }
 
+                
                 throw new InvalidOperationException("Cannot find UserProfile with login: " + login);
             }
         }

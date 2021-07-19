@@ -10,7 +10,27 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
 {
     class ConsolePL
     {
-        static private UserProfile Profile { set; get; }
+        private static UserProfile Profile { get; set; }
+        private static List<Achievement> Achievements { get; set; }
+
+        private static void ShowAchievements()
+        {
+            Console.WriteLine(Profile);
+            int i = 0;
+            foreach (Achievement ach in Achievements)
+            {
+                Console.WriteLine($"{i}: {ach}");
+                i++;
+            }
+        }
+        private static Guid GetAchievementIdByListNomber(int number) => Achievements[number].Id;
+        private static int GetAchievementNomber()
+        {
+            ShowAchievements();
+            Console.WriteLine("Введите номер достижения для работы с ним");
+            int number = int.Parse(Console.ReadLine());
+            return number;
+        }
 
         private static bool ConsoleСonfirmAction()
         {
@@ -82,22 +102,14 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
             if (ConsoleСonfirmAction())
             {
                 //DependencyResolver.Instance.UserProfileLogic.Registration(toAdd, login, "fffrhrtyszx24231");
-                DependencyResolver.Instance.UserProfileLogic.Registration(toAdd, login, pass);
+                Profile = DependencyResolver.Instance.UserProfileLogic.Registration(toAdd, login, pass);
                 Console.WriteLine("Добавление нового пользователя успешно завершилось");
             }
             else
             {
                 Console.WriteLine("Добавление нового пользователя было отменено");
                 return;
-            }
-
-            Console.WriteLine("Желаете войти в созданный профиль?");
-            if (ConsoleСonfirmAction())
-            {
-                UserAuthorization(login, pass);
-                Console.WriteLine("Проифль успешно авторизован");
-            }
-
+            }   
         }
 
         private static void UserAuthorization(string login, string pass)
@@ -113,6 +125,247 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
             UserAuthorization(login, pass);
         }
 
+        private static void GetUserProfile()
+        {
+            Profile = DependencyResolver.Instance.UserProfileLogic.GetUserProfile(Profile.Id);
+        }
+        private static void EditUserProfile()
+        {
+            Console.WriteLine(Profile);
+            Console.WriteLine("Изменить полное имя?");
+            if(ConsoleСonfirmAction())
+            {
+                Console.WriteLine("Введите новое полное имя:");
+                string fullName = Console.ReadLine();
+                Profile.FullName = fullName;
+            }
+            Console.WriteLine(Profile);
+            Console.WriteLine("Изменить дату рождения?");
+            if (ConsoleСonfirmAction())
+            {
+                Console.WriteLine("Введите новую дату (дд.мм.гггг):");
+                DateTime birthDate = DateTime.Parse(Console.ReadLine());
+                Profile.BirthDate = birthDate;
+
+            }
+            DependencyResolver.Instance.UserProfileLogic.EditUserProfile(Profile.Id, Profile.FullName, Profile.BirthDate);
+            // не уверен зачем, но давайте будем считать что периодическое обновление от сервера нам требуется, а значит произойдет 
+            // внеочередное подтягивание профиля из бд
+            GetUserProfile();
+            Console.WriteLine(Profile);
+
+        }
+        private static void RemoveUserProfile()
+        {
+            Console.WriteLine("Вы уверены, что хотите УДАЛИТЬ профиль?");
+            if (ConsoleСonfirmAction())
+            {
+                DependencyResolver.Instance.UserProfileLogic.RemoveUserProfile(Profile.Id);
+                Profile = null;
+            }            
+        }
+
+        private static void GetUserAchievements()
+        {
+            Achievements = DependencyResolver.Instance.AchievementLogic.GetUserAchievements(Profile.Id);
+        }
+        private static void AddUserAchievement()
+        {
+            Console.WriteLine("Добавление нового достижения:\n" +
+                "Название/заголовок:");
+            string heading = Console.ReadLine();
+            if (heading == "")
+            {
+                heading = null;
+            }
+            Console.WriteLine("Место/локация получения (при отсутствии - пропустить):");
+            string locationOfReceipt = Console.ReadLine();
+            if (locationOfReceipt == "")
+            {
+                locationOfReceipt = null;
+            }
+            Console.WriteLine("Место/степень/этап (при отсутствии - пропустить):");
+            int? degree;
+            try
+            {
+                degree = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                degree = null; 
+            }
+          
+            Console.WriteLine("Год получения (при отсутствии - пропустить):");
+            int? yearOfReceipt;
+            try
+            {
+                yearOfReceipt = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                yearOfReceipt = null;
+            }
+
+            Achievement toAdd = new Achievement(Profile.Id, heading, locationOfReceipt, degree, yearOfReceipt);
+
+            Console.WriteLine($"К добавлению подготовлено достижение:\n{toAdd}\n");
+            if (ConsoleСonfirmAction())
+            {
+                DependencyResolver.Instance.AchievementLogic.AddAchievement(toAdd);                
+                Console.WriteLine("Добавление нового достижения успешно завершилось");
+                GetUserAchievements();
+            }
+            else
+            {
+                Console.WriteLine("Добавление нового достижения было отменено");
+                return;
+            }
+        }
+        private static void EditUserAchievement()
+        {
+            int number = GetAchievementNomber();
+            Guid achId = GetAchievementIdByListNomber(number);
+            string heading = Achievements[number].Heading;
+            string locationOfReceipt = Achievements[number].LocationOfReceipt;
+            int? degree = Achievements[number].Degree;
+            int? yearOfReceipt = Achievements[number].YearOfReceipt;
+
+            Console.WriteLine(Achievements[number]);
+            Console.WriteLine("Изменить название/заголовок ?");
+            if (ConsoleСonfirmAction())
+            {
+                Console.WriteLine("Введите новое название/заголовок:");
+                heading = Console.ReadLine();
+                if (heading == "")
+                {
+                    heading = null;
+                }
+            }
+            Console.WriteLine(Achievements[number]);
+            Console.WriteLine("Изменить место/локацию получения (при отсутствии - пустая строка) ?");
+            if (ConsoleСonfirmAction())
+            {
+                Console.WriteLine("Введите место/локацию получения:");
+                locationOfReceipt = Console.ReadLine();
+                if (locationOfReceipt == "")
+                {
+                    locationOfReceipt = null;
+                }
+
+            }
+            Console.WriteLine(Achievements[number]);
+            Console.WriteLine("Изменить место/степень/этап (при отсутствии - пустая строка) ?");
+            if (ConsoleСonfirmAction())
+            {
+                Console.WriteLine("Введите новое место/степень/этап:");
+                degree = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine(Achievements[number]);
+            Console.WriteLine("Изменить год получения (при отсутствии - пустая строка) ?");
+            if (ConsoleСonfirmAction())
+            {
+                Console.WriteLine("Введите новый год получения:");
+                yearOfReceipt = int.Parse(Console.ReadLine());
+            }
+
+            DependencyResolver.Instance.AchievementLogic.EditAchievement(achId, heading, locationOfReceipt, degree, yearOfReceipt);
+            Console.WriteLine(DependencyResolver.Instance.AchievementLogic.GetAchievement(achId));            
+        }
+        private static void RemoveUserAchievement()
+        {
+            int number = GetAchievementNomber();
+            Console.WriteLine("Вы уверены, что хотите УДАЛИТЬ достижение?");
+            if (ConsoleСonfirmAction())
+            {
+                DependencyResolver.Instance.AchievementLogic.RemoveAchievement(GetAchievementIdByListNomber(number));
+                GetUserAchievements();
+                ShowAchievements();
+            }
+        }
+
+
+        private static bool AchievementsMenu()
+        {
+            if (Profile == null)
+            {
+                Console.WriteLine("Вы неавторизованы!");
+                return false;
+            }
+
+            Console.WriteLine("Интерфейс Ваших достижений DB Achievements:\n" +
+            "Для продолжения введите номер действия\n" +
+                "1. Обновление и просмотр списка достижений\n" +
+                "2. Добавление нового достижения\n" +
+                "3. Изменение выбранного достижения\n" +
+                "4. Удаление выбранного достижения\n" +
+                "5. Выход\n");
+
+            char number = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+            switch (number)
+            {
+                case '1':
+                    GetUserAchievements();
+                    ShowAchievements();
+                    return true;
+                case '2':
+                    AddUserAchievement();
+                    return true;
+                case '3':
+                    EditUserAchievement();
+                    return true;
+                case '4':
+                    RemoveUserAchievement();
+                    return true;
+                case '5':
+                    return false;
+                default:
+                    throw new InvalidOperationException("Выбор операции произведен некорректно");
+            }
+
+        }
+        private static bool ProfileMenu()
+        {
+            if(Profile == null)
+            {
+                Console.WriteLine("Вы неавторизованы!");
+                return false;
+            }
+            Console.WriteLine("Интерфейс Вашего профиля DB Achievements:\n" +
+            "Для продолжения введите номер действия\n" +
+                "1. Обновление и просмотр профиля\n" +
+                "2. Изменение профиля\n" +
+                "3. Удаление профиля\n" +
+                "4. Операции в меню ваших достижений\n" +
+                "5. Выход\n");
+            char number = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+            switch (number)
+            {
+                case '1':
+                    GetUserProfile();
+                    Console.WriteLine(Profile);
+                    return true;
+                case '2':
+                    EditUserProfile();
+                    return true;
+                case '3':
+                    RemoveUserProfile();
+                    return true;
+                case '4':
+                    bool stopFlag = true;
+                    while (stopFlag)
+                    {
+                        stopFlag = AchievementsMenu();
+                    }
+                    return true;
+                case '5':
+                    return false;
+                default:
+                    throw new InvalidOperationException("Выбор операции произведен некорректно");
+
+            }
+        }
         private static void ConsoleMenu()
         {
             Console.WriteLine("Консольный интерфейс DB Achievements:\n" +
@@ -126,9 +379,21 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
             {
                 case '1':
                     UserAuthorization();
+                    Console.WriteLine(Profile);
+                    bool stopFlag1 = true; 
+                    while (stopFlag1)
+                    {
+                        stopFlag1 = ProfileMenu();
+                    }
                     break;
                 case '2':
                     UserProfileRegistration();
+                    Console.WriteLine(Profile);
+                    bool stopFlag2 = true;
+                    while (stopFlag2)
+                    {
+                        stopFlag2 = ProfileMenu();
+                    }
                     break;
                 case '3':
                     return;
@@ -139,26 +404,10 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
             
             
         }
+
         static void Main(string[] args)
-        {
-            //RegistrationUserProfile("one");
-            //RegistrationUserProfile("two");
-            //RegistrationUserProfile("322");
-            ////Console.WriteLine("Hello *** world!");
-
-            //var upIn = new UserProfile("гроооомашик", DateTime.Parse("30.05.2000"));
-
-            //DependencyResolver.Instance.UserProfileLogic.AddUserProfile(upIn);
-            //DependencyResolver.Instance.UserProfileLogic.RemoveUserProfile(Guid.Parse("AE1B37DE-42DC-4688-8669-3DF037416641"));
-            ////var upOut = DependencyResolver.Instance.UserProfileLogic.GetUserProfile(Guid.Parse("8CD06187-EBD6-41DE-92B2-6C4800FCFCB6"));
-            ////Console.WriteLine(upOut);
-            ///
-            Console.WriteLine(Profile);
+        {            
             ConsoleMenu();
-            Console.WriteLine(Profile);
-
-            //Console.WriteLine("Nice");
-            Console.ReadLine();
         }
     }
 }

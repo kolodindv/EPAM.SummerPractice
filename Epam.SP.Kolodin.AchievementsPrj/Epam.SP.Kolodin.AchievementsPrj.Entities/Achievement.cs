@@ -9,7 +9,7 @@ namespace Epam.SP.Kolodin.AchievementsPrj.Entities
 {
     public class Achievement
     {
-        public Achievement(Guid id, Guid userId, string heading, string locationOfReceipt, int degree, int yearOfReceipt)
+        public Achievement(Guid id, Guid userId, string heading, string locationOfReceipt, int? degree, int? yearOfReceipt)
         {
             Id = id;
             UserId = userId;
@@ -18,19 +18,19 @@ namespace Epam.SP.Kolodin.AchievementsPrj.Entities
             Degree = degree;
             YearOfReceipt = yearOfReceipt;
         }
-        public Achievement(Guid userId, string heading, string locationOfReceipt, int degree, int yearOfReceipt) :
+        public Achievement(Guid userId, string heading, string locationOfReceipt, int? degree, int? yearOfReceipt) :
             this(Guid.NewGuid(), userId, heading, locationOfReceipt, degree, yearOfReceipt) { }
 
-        public Guid Id { get; }
-        public Guid UserId { get; }
+        public Guid Id { get; private set; }
+        public Guid UserId { get; private set; }
 
-        public string Heading { get; private set; }
+        public string Heading { get; set; }
 
-        public string LocationOfReceipt { get; private set; }
+        public string LocationOfReceipt { get; set; }
 
-        public int Degree { get; private set; }
+        public int? Degree { get; set; }
 
-        public int YearOfReceipt { get; private set; }
+        public int? YearOfReceipt { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this);        
     }
