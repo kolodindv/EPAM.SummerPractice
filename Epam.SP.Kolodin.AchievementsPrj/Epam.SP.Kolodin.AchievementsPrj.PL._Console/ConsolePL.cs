@@ -16,6 +16,20 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
         private static void ShowAchievements()
         {
             Console.WriteLine(Profile);
+            if (Achievements.Count < 1)
+            {
+                Console.WriteLine("У Вас ещё нет достижений");
+                return;
+            }
+            int i = 0;
+            foreach (Achievement ach in Achievements)
+            {
+                Console.WriteLine($"{i}: {ach}");
+                i++;
+            }
+        }
+        private static void ShowAchievements(List<Achievement> Achievements)
+        {            
             int i = 0;
             foreach (Achievement ach in Achievements)
             {
@@ -283,6 +297,16 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
             }
         }
 
+        private static List<Achievement> GetAchievementsByTitleLike(string like)
+        {
+            return DependencyResolver.Instance.AchievementLogic.GetAchievementsByTitleLike(like);
+        }
+        private static void FindAchievementsByPiece()
+        {
+            Console.WriteLine("Введите часть названия/заголовка достижения");
+            string part = Console.ReadLine();
+            ShowAchievements(GetAchievementsByTitleLike(part));
+        }
 
         private static bool AchievementsMenu()
         {
@@ -298,7 +322,8 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
                 "2. Добавление нового достижения\n" +
                 "3. Изменение выбранного достижения\n" +
                 "4. Удаление выбранного достижения\n" +
-                "5. Выход\n");
+                "5. Поиск в базе данных достижений по части названия\n" +
+                "6. Выход\n");
 
             char number = Console.ReadKey().KeyChar;
             Console.WriteLine();
@@ -318,6 +343,9 @@ namespace Epam.SP.Kolodin.AchievementsPrj.PL._Console
                     RemoveUserAchievement();
                     return true;
                 case '5':
+                    FindAchievementsByPiece();
+                    return true;
+                case '6':
                     return false;
                 default:
                     throw new InvalidOperationException("Выбор операции произведен некорректно");

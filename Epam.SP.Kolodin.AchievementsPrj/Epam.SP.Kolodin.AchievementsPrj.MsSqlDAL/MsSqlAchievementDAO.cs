@@ -207,12 +207,9 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
 
                         userAchievements.Add(temp);
                     }
-                    return userAchievements;
                 }
-                else
-                {
-                    throw new InvalidOperationException("Cannot find UserProfile with GUID: " + userId);
-                }
+
+                return userAchievements;
 
             }
         }
@@ -228,6 +225,63 @@ namespace Epam.SP.Kolodin.AchievementsPrj.MsSqlDAL
                 _connection.Open();
                 command.Parameters.AddWithValue("@id", id);
                 command.ExecuteNonQuery();
+            }
+        }
+
+        public List<Achievement> GetAchievementsByTitleLike(string like)
+        {
+            using (_connection = GetNewSqlConnection())
+            {
+                var query = "SELECT id_pk, user_id_pk_fk, heading, location_of_receipt, degree, year_of_receipt " +
+                            "FROM achievements " +
+                            $"WHERE heading LIKE '%{like}%'";
+                SqlCommand command = new SqlCommand(query, _connection);
+                command.CommandType = CommandType.Text;
+
+                _connection.Open();
+
+                List<Achievement> userAchievements = new List<Achievement>();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        int? degree;
+                        int degree2;
+                        if (reader["degree"] == DBNull.Value)
+                        {
+                            degree = null;
+                        }
+                        else
+                        {
+                            degree2 = (int)reader["degree"];
+                            degree = degree2;
+                        }
+                        short? yearOfReceipt;
+                        short yearOfReceipt2;
+                        if (reader["year_of_receipt"] == DBNull.Value)
+                        {
+                            yearOfReceipt = null;
+                        }
+                        else
+                        {
+                            yearOfReceipt2 = (short)reader["year_of_receipt"];
+                            yearOfReceipt = yearOfReceipt2;
+                        }
+                        Achievement temp = new Achievement(
+                            id: (Guid)reader["id_pk"],
+                            userId: (Guid)reader["user_id_pk_fk"],
+                            heading: reader["heading"] as string,
+                            locationOfReceipt: reader["location_of_receipt"] as string,
+                            degree: degree,
+                            yearOfReceipt: yearOfReceipt);
+
+                        userAchievements.Add(temp);
+                    }
+                }
+
+                return userAchievements;
+
             }
         }
 

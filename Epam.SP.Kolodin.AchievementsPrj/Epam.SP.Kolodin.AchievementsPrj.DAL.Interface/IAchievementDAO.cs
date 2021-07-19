@@ -14,5 +14,6 @@ namespace Epam.SP.Kolodin.AchievementsPrj.DAL.Interface
         List<Achievement> GetUserAchievements(Guid userId);
         Achievement EditAchievement(Guid id, string heading, string locationOfReceipt, int? degree, int? yearOfReceipt);
         void RemoveAchievement(Guid userId);
+        List<Achievement> GetAchievementsByTitleLike(string like);
     }
 }

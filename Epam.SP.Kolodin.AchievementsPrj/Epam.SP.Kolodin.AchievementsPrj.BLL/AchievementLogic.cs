@@ -23,6 +23,7 @@ namespace Epam.SP.Kolodin.AchievementsPrj.BLL
         public Achievement EditAchievement(Guid id, string heading, string locationOfReceipt, int? degree, int? yearOfReceipt) => 
             _achievementDAO.EditAchievement(id, heading, locationOfReceipt, degree, yearOfReceipt);
         public void RemoveAchievement(Guid userId) => _achievementDAO.RemoveAchievement(userId);
+        public List<Achievement> GetAchievementsByTitleLike(string like) => _achievementDAO.GetAchievementsByTitleLike(like);
     }
 }
 
